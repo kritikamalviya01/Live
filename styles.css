@@ -75,13 +75,17 @@
 }
 
 .hero-content h1 {
-    font-size: 2rem; /* Adjust the font size as needed */
+    font-family: 'Dancing Script', cursive;
+
+
+    font-size: 3.5rem; /* Adjust the font size as needed */
     margin: 0;
 }
 
 .hero-content p {
     font-size: 1.3rem; /* Adjust the font size as needed */
     margin-top: 10px;
+    color: #ff5733;
 }
 
 @media (max-width: 768px) {

@@ -12,5 +12,12 @@ $(document).ready(function() {
             $('.navbar').toggleClass('bg-black');
         }
     });
+
+    var typed = new Typed("#typed-text", {
+        strings: ["","Web Developer", "Designer", "Creative Thinker"],
+        typeSpeed: 60, // Typing speed in milliseconds
+        backSpeed: 40, // Backspacing speed in milliseconds
+        loop: true, // Loop the animation
+    });
 });
 
