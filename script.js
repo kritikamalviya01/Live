@@ -19,5 +19,20 @@ $(document).ready(function() {
         backSpeed: 40, // Backspacing speed in milliseconds
         loop: true, // Loop the animation
     });
+
+    $(document).ready(function() {
+        // Smooth scrolling for all anchor links
+        $("a").on('click', function(event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 800, function() {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
 });
 
