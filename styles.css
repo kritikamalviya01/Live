@@ -92,8 +92,9 @@
 .intro-tile {
     background-color: #000000; /* Black background */
     color: #FFF; /* White text color */
-    padding: 100px 0; /* Increased padding for more height */
+    padding: 80px 0; /* Increased padding for more height */
     text-align: center; /* Center-align text */
+    
 }
 
 .intro-tile h2 {
@@ -108,6 +109,62 @@
     line-height: 2; /* Increased line height for better readability */
 }
 
+
+/* Connect Section */
+
+
+.connect {
+    background-color: #000; /* Black background */
+    padding: 60px 0; /* Adjust height and spacing as needed */
+    text-align: center;
+}
+
+.connect h2 {
+    font-size: 26px;
+    color: #fff; /* White text color */
+    margin-bottom: 50px;
+    margin-top: 1%;
+}
+
+.connect i {
+    font-size: 36px; /* Adjust icon size as needed */
+    color: #ff5733; /* Icon color */
+}
+
+.connect i:hover {
+    color: #fff; /* Change icon color on hover */
+}
+
+.connect .col-4 {
+    margin: 0; /* Remove the default margin */
+    padding: 0 2px; /* Add padding to create space between icons */
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+
+footer {
+    background-color: #000; /* Black background */
+    color: #ff5733; /* Text color: ff5733 (orange) */
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #ff5733; /* Link color: ff5733 (orange) */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #fff; /* Change link color on hover to white */
+}
+
+/* Center-align the text */
+.footer-text {
+    text-align: center;
+    margin-top: 10px;
+}
 
 
 @media (max-width: 768px) {
