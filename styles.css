@@ -88,6 +88,26 @@
     color: #ff5733;
 }
 
+/* Updated CSS for Introductory Tile */
+.intro-tile {
+    background-color: #000000; /* Black background */
+    color: #FFF; /* White text color */
+    padding: 100px 0; /* Increased padding for more height */
+    text-align: center; /* Center-align text */
+}
+
+.intro-tile h2 {
+    color:#ff5733;
+    font-size: 28px; /* Increased font size for the title */
+    margin-bottom: 20px;
+}
+
+.intro-tile p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
 @media (max-width: 768px) {
 
 
