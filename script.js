@@ -8,31 +8,45 @@ $(document).ready(function() {
     });
 
     $('.custom-toggler').click(function() {
-        if ($(window).width() <= 768) { // Only apply this on smaller screens (responsive mode)
+        if ($(window).width() <= 768) {
             $('.navbar').toggleClass('bg-black');
         }
     });
 
     var typed = new Typed("#typed-text", {
         strings: ["","Web Developer", "Designer", "Creative Thinker"],
-        typeSpeed: 60, // Typing speed in milliseconds
-        backSpeed: 40, // Backspacing speed in milliseconds
-        loop: true, // Loop the animation
+        typeSpeed: 60,
+        backSpeed: 40,
+        loop: true,
     });
 
-    $(document).ready(function() {
-        // Smooth scrolling for all anchor links
-        $("a").on('click', function(event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800, function() {
-                    window.location.hash = hash;
-                });
+    // Smooth scrolling for all anchor links
+    $("a").on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 800, function() {
+                window.location.hash = hash;
+            });
+        }
+    });
+
+    // Get the current URL
+    const currentUrl = window.location.href;
+
+    const links = {
+        connect: document.getElementById("connect-link")
+        // Add IDs for other links
+    };
+
+
+    for (const key in links) {
+        if (links.hasOwnProperty(key)) {
+            if (currentUrl.includes(links[key].href)) {
+                links[key].classList.add("active");
             }
-        });
-    });
+        }
+    }
 });
-
