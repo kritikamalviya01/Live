@@ -170,6 +170,7 @@ footer {
     color: #ff5733; /* Text color: ff5733 (orange) */
     padding: 20px 0;
     text-align: center;
+    margin-bottom: 0%;
 }
 
 footer a {
@@ -193,8 +194,59 @@ footer a:hover {
 
 /* -------------------------------------Education & Certificatio Section -------------------------*/
  
-  
-  
+#table {
+    margin-top: 7%;
+    margin-bottom: 5%;
+}
+
+#table h1 {
+    margin-bottom: 4%;
+}
+
+.custom-table left {
+    width: 40%; /* Set your desired width here */
+    border: none; /* Remove table borders */
+    margin-top: 5%;
+    padding-right: 20px; 
+}
+
+.custom-table th, .custom-table td {
+    /* margin-top: 5%; */
+    border: none; /* Remove cell borders */
+    color: #eee9e9;
+}
+
+/* Style for images within the table */
+.custom-table img {
+    width: 80px; /* Set your desired width for the images */
+    height: 80px; /* Set your desired height for the images */
+    object-fit: cover; /* Ensure images maintain their aspect ratio */
+    border-radius: 50%; /* Make the images circular */
+}
+
+.custom-table tr {
+    display: flex;
+    align-items: center;
+}
+
+.custom-table .right {
+    flex: 1; /* Take remaining available space */
+}
+
+/* Style for the h3 tag */
+.custom-table h3 {
+    overflow: hidden;
+}
+
+/* Additional styling for the description text */
+.custom-table p {
+    margin: 0; /* Remove any margin to avoid extra spacing */
+}
+
+
+
+
+
 
 
 @media (max-width: 768px) {
