@@ -3,6 +3,11 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #000; /* Black background color */
+    color: #fff; /* White text color */
+}
+
 /* Navbar styles */
 .navbar {
     background: transparent;
@@ -31,6 +36,15 @@ html {
     transition: color 0.3s;
     margin-right: 15px;
     font-size: 16px;
+}
+
+.navbar-nav .nav-link.active {
+    color: #ff5733; /* Active link color */
+    /* Add any other active link styles here */
+}
+
+.active {
+    color: #ff5733;
 }
 
 /* Hover effect for navbar links */
@@ -175,8 +189,19 @@ footer a:hover {
 }
 
 
+
+
+/* -------------------------------------Education & Certificatio Section -------------------------*/
+ 
+  
+  
+
+
 @media (max-width: 768px) {
 
+    .active {
+        color: #ff5733; /* Change to your desired active link color */
+    }
 
     .hero {
         height: 50vh; /* Adjust the height as needed for smaller screens */
@@ -189,4 +214,8 @@ footer a:hover {
     .hero-content p {
         font-size: 1.1rem; /* Adjust the font size as needed for smaller screens */
     }
+
+    .matrix {
+        grid-template-columns: 1fr; /* Adjust for single-column layout on smaller screens */
+      }
 }
