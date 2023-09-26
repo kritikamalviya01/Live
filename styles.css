@@ -36,7 +36,10 @@ body {
     transition: color 0.3s;
     margin-right: 15px;
     font-size: 16px;
+    padding: 5px 10px;
 }
+
+
 
 .navbar-nav .nav-link.active {
     color: #ff5733; /* Active link color */
@@ -65,6 +68,21 @@ body {
 
 .navbar-nav .nav-link:hover {
     color: #ff5733; /* Change color on hover */
+}
+
+/* Style for the round logo */
+.rounded-logo {
+    border-radius: 50%;
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+}
+
+/* Style for the custom horizontal line */
+.custom-horizontal-line {
+    width: 60%; /* Set the desired width */
+    height: 1px; /* Set the desired height/thickness */
+    background-color: #fff; /* Set the line color */
+    margin: 20px auto; /* Center the line horizontally and provide vertical spacing */
 }
 
 /* Hero section styles */
@@ -195,12 +213,15 @@ footer a:hover {
 /* -------------------------------------Education & Certificatio Section -------------------------*/
  
 #table {
-    margin-top: 7%;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-bottom: 3%;
 }
 
 #table h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; 
     margin-bottom: 4%;
+    color: #ff5733;
 }
 
 .custom-table left {
@@ -208,6 +229,10 @@ footer a:hover {
     border: none; /* Remove table borders */
     margin-top: 5%;
     padding-right: 20px; 
+}
+
+.custom-table .right {
+    flex: 1; 
 }
 
 .custom-table th, .custom-table td {
@@ -218,8 +243,8 @@ footer a:hover {
 
 /* Style for images within the table */
 .custom-table img {
-    width: 80px; /* Set your desired width for the images */
-    height: 80px; /* Set your desired height for the images */
+    width: 60px; /* Set your desired width for the images */
+    height: 60px; /* Set your desired height for the images */
     object-fit: cover; /* Ensure images maintain their aspect ratio */
     border-radius: 50%; /* Make the images circular */
 }
@@ -229,12 +254,13 @@ footer a:hover {
     align-items: center;
 }
 
-.custom-table .right {
-    flex: 1; /* Take remaining available space */
-}
+
 
 /* Style for the h3 tag */
 .custom-table h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* Regular weight */
+    font-size: 24px; /* Adjust the font size as needed */
     overflow: hidden;
 }
 
@@ -243,11 +269,117 @@ footer a:hover {
     margin: 0; /* Remove any margin to avoid extra spacing */
 }
 
+/* Style for the table rows with a white background */
+.custom-table-row {
+    background-color: rgba(40,40,40); /* Adjust the opacity as needed */
+    border-radius: 10px;  
+    border-left: 4px solid #ff5733;
+    margin-bottom: 15px;
+    padding: 15px; 
+}
 
+/* ////////////////////////Work expereince ////////////////////////// */
 
+/* Add a custom style for the vertical line */
+.custom-vertical-line {
+    width: 2px; /* Adjust the line thickness as needed */
+    height: 150px; /* Adjust the line height as needed */
+    background-color: #ff5733; /* Line color */
+    margin: 0 auto; /* Center the line horizontally */
 
+}
 
+/* Style for the "Projects" section */
+#projects {
+    text-align: center; /* Center-align the section content */
+}
 
+#projects h2 {
+    font-size: 24px; /* Adjust the font size for the section header */
+    color: #ff5733; /* Text color */
+    margin-top: 30px; /* Add spacing between the line and header */
+}
+
+/* Style for individual project details */
+.project-details {
+    margin-top: 30px; /* Add spacing between project details */
+}
+
+.project-details h4 {
+    font-size: 18px; /* Adjust the font size for project headers */
+    color: #000; /* Text color for project headers */
+}
+
+.project-details p {
+    font-size: 16px; /* Adjust the font size for project descriptions */
+    color: #555; /* Text color for project descriptions */
+}
+
+.align-down {
+    vertical-align: bottom; /* Align content to the bottom of the cell */
+}
+
+/* ... Other styles from your existing CSS ... */
+
+.bg {
+    border-left:3px solid #ff5733;
+}
+
+/* ---------------------GIT REPO STyling __________________________ */
+
+.repo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: rgba(40,40,40); /* Adjust the opacity as needed */
+    border-radius: 10px;  
+    border-left: 4px solid #ff5733;
+    margin-bottom: 15px;
+    padding: 15px; 
+  }
+  
+  #git-repo h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; 
+    margin-bottom: 4%;
+    color: #ff5733;
+    margin-top: 7%;
+  }
+  .repo-container img{
+    width: 60px; /* Set your desired width for the images */
+    height: 60px; /* Set your desired height for the images */
+    object-fit: cover; /* Ensure images maintain their aspect ratio */
+    border-radius: 50%; /* Make the images circular */
+    margin-right: 4%;
+  }
+
+  .repo-details {
+    flex: 1;
+  }
+
+  .repo-details h3 {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400; /* Regular weight */
+    font-size: 24px; /* Adjust the font size as needed */
+    overflow: hidden;
+  }
+
+  .repo-details p {
+    margin: 5px 0;
+  }
+
+  .repo-logo {
+    max-width: 100px;
+  }
+
+  .repo-link {
+    text-decoration: none; /* Remove underlines */
+    cursor: pointer; /* Show a hand cursor on hover */
+  }
+
+ 
 
 @media (max-width: 768px) {
 
@@ -270,4 +402,22 @@ footer a:hover {
     .matrix {
         grid-template-columns: 1fr; /* Adjust for single-column layout on smaller screens */
       }
+
+      /* Remove some margin and padding for small screens */
+    #table {
+        margin-top: 12%;
+        margin-bottom: 1%;
+    }
+
+    .custom-table h3 {
+        font-size: 18px; /* Adjust font size for smaller screens */
+    }
+
+    #table h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-size: xx-large;
+        font-weight: 200; 
+        margin-bottom: 4%;
+        color: #ff5733;
+    }
 }

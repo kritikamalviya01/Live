@@ -10,7 +10,54 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Dev/styles.css">
     <title>Kritika Malviya</title>
+    <style>
+      .repo-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        background-color: rgba(40,40,40); /* Adjust the opacity as needed */
+        border-radius: 10px;  
+        border-left: 4px solid #ff5733;
+        margin-bottom: 15px;
+        padding: 15px; 
+      }
+      
+      #git-repo h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 400; 
+        margin-bottom: 4%;
+        color: #ff5733;
+        margin-top: 7%;
+      }
+      .repo-container img{
+        width: 60px; /* Set your desired width for the images */
+        height: 60px; /* Set your desired height for the images */
+        object-fit: cover; /* Ensure images maintain their aspect ratio */
+        border-radius: 50%; /* Make the images circular */
+        margin-right: 4%;
+      }
 
+      .repo-details {
+        flex: 1;
+      }
+
+      .repo-details h3 {
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400; /* Regular weight */
+        font-size: 24px; /* Adjust the font size as needed */
+        overflow: hidden;
+      }
+
+      .repo-details p {
+        margin: 5px 0;
+      }
+
+      .repo-logo {
+        max-width: 100px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -26,10 +73,10 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-link" href="/Dev/index.html">Profile</a>
                     </li>
-                    <li class="nav-item">
+                    <li class "nav-item">
                         <a class="nav-link" id="education-link" href="/Dev/assets/education.html">Education & Certifications</a>
                     </li>
-                    <li class="nav-item">
+                    <li class "nav-item">
                         <a class="nav-link " id="experience-link" href="/Dev/assets/experience.html">Work Experience</a>
                     </li>
                     <li class="nav-item active">
@@ -44,24 +91,24 @@
     </nav>
 
     <div class="container" id="git-repo">
-        <h1>Git Repositories</h1>
-        <div class="repo-container">
-          <img class="repo-logo" src="/Dev/images/git.png" alt="GitHub Logo">
-          <div class="repo-details">
-            <h3><a class="repo-link" href="https://github.com/yourusername/repo1" target="_blank">SocialMediaCEO</a></h3>
-            <p>Web Development</p>
-          </div>
+      <h1>Git Repositories</h1>
+      <div class="repo-container">
+        <img class="repo-logo" src="/Dev/images/git.png" alt="GitHub Logo">
+        <div class="repo-details">
+          <h3>SocialMediaCEO</h3>
+          <p>Web Development</p>
         </div>
-  
-        <div class="repo-container">
-          <img class="repo-logo" src="/Dev/images/git.png" alt="GitHub Logo">
-          <div class="repo-details">
-            <h3><a class="repo-link" href="https://github.com/yourusername/repo2" target="_blank">Repository 2</a></h3>
-            <p>Python, Flask, SQLite</p>
-          </div>
-        </div>
-        <!-- Add more repositories as needed -->
       </div>
+
+      <div class="repo-container">
+        <img class="repo-logo" src="/Dev/images/git.png" alt="GitHub Logo">
+        <div class="repo-details">
+          <h3>Repository 2</h3>
+          <p>Python, Flask, SQLite</p>
+        </div>
+      </div>
+      <!-- Add more repositories as needed -->
+    </div>
 
     <hr class="custom-horizontal-line">
 
