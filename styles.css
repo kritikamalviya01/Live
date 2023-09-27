@@ -337,7 +337,14 @@ footer a:hover {
     border-left: 4px solid #ff5733;
     margin-bottom: 15px;
     padding: 15px; 
+
   }
+
+
+.repo-container a:hover {
+    color: #ff5733; /* Change text color on hover to your desired color */
+    text-decoration: none;
+}
   
   #git-repo h1 {
     font-family: 'Open Sans', sans-serif;
@@ -359,6 +366,7 @@ footer a:hover {
   }
 
   .repo-details h3 {
+    color: aliceblue;
     margin: 0;
     font-family: 'Lato', sans-serif;
     font-weight: 400; /* Regular weight */
@@ -367,6 +375,7 @@ footer a:hover {
   }
 
   .repo-details p {
+    color: aliceblue;
     margin: 5px 0;
   }
 
