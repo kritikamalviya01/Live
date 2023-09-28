@@ -327,6 +327,15 @@ footer a:hover {
 
 /* ---------------------GIT REPO STyling __________________________ */
 
+
+
+
+#git-repo a {
+    text-decoration: none;
+    color:aliceblue ;
+
+}
+
 .repo-container {
     display: flex;
     justify-content: space-between;
@@ -337,13 +346,13 @@ footer a:hover {
     border-left: 4px solid #ff5733;
     margin-bottom: 15px;
     padding: 15px; 
+    transition: none;
 
   }
 
 
 .repo-container a:hover {
     color: #ff5733; /* Change text color on hover to your desired color */
-    text-decoration: none;
 }
   
   #git-repo h1 {
@@ -353,6 +362,7 @@ footer a:hover {
     color: #ff5733;
     margin-top: 7%;
   }
+
   .repo-container img{
     width: 60px; /* Set your desired width for the images */
     height: 60px; /* Set your desired height for the images */
@@ -384,8 +394,8 @@ footer a:hover {
   }
 
   .repo-link {
-    text-decoration: none; /* Remove underlines */
-    cursor: pointer; /* Show a hand cursor on hover */
+    text-decoration: none; 
+    cursor: pointer; 
   }
 
  
