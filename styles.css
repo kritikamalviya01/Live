@@ -4,35 +4,35 @@ html {
 }
 
 body {
-    background-color: #000; /* Black background color */
-    color: #fff; /* White text color */
+    background-color: #000; 
+    color: #fff; 
 }
 
-/* Navbar styles */
+/*---------------------------------- Navbar styles------------------------------- */
 .navbar {
     background: transparent;
     transition: background-color 0.3s;
 }
 
 .navbar a.navbar-brand img {
-    max-height: 40px; /* Adjust the logo height as needed */
+    max-height: 40px; /* Adjust the logo height */
 }
 
 .custom-toggler .navbar-toggler-icon {
-    background-color: transparent; /* Remove the default background */
-    border: none; /* Remove the default border */
-    color: #fff; /* Icon color */
-    font-size: 24px; /* Icon size */
+    background-color: transparent; 
+    border: none; 
+    color: #fff; 
+    font-size: 24px; 
 }
 
 /* Background color change when the toggle button is clicked */
 .bg-black {
-    background-color: rgba(0, 0, 0, 0.9) !important; /* Change to black */
+    background-color: rgba(0, 0, 0, 0.9) !important; 
 }
 
 /* Navbar links */
 .navbar-nav .nav-link {
-    color: #fff; /* Text color */
+    color: #fff; 
     transition: color 0.3s;
     margin-right: 15px;
     font-size: 16px;
@@ -43,7 +43,6 @@ body {
 
 .navbar-nav .nav-link.active {
     color: #ff5733; /* Active link color */
-    /* Add any other active link styles here */
 }
 
 .active {
@@ -58,44 +57,44 @@ body {
 
 /* Transparent background when scrolled */
 .navbar.scrolled {
-    background: rgba(0, 0, 0, 0.7); /* Slightly opaque black background */
+    background: rgba(0, 0, 0, 0.7); 
 }
 
 /* Change link color when scrolled */
 .navbar.scrolled .navbar-nav .nav-link {
-    color: #fff; /* Text color */
+    color: #fff; 
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ff5733; /* Change color on hover */
+    color: #ff5733; 
 }
 
 /* Style for the round logo */
 .rounded-logo {
     border-radius: 50%;
-    width: 50px; /* Adjust the width as needed */
-    height: 50px; /* Adjust the height as needed */
+    width: 50px; 
+    height: 50px; 
 }
 
 /* Style for the custom horizontal line */
 .custom-horizontal-line {
-    width: 60%; /* Set the desired width */
-    height: 1px; /* Set the desired height/thickness */
-    background-color: #fff; /* Set the line color */
-    margin: 20px auto; /* Center the line horizontally and provide vertical spacing */
+    width: 60%; 
+    height: 1px;
+    background-color: #fff; 
+    margin: 20px auto; 
 }
 
-/* Hero section styles */
+/* -----------------------------------Hero section styles------------------------------ */
 .hero {
     position: relative;
     text-align: center;
-    background: url('/Dev/images/herobg2.jpg') center/cover no-repeat; /* Set the background image */
-    height: 90vh; /* Adjust the height as needed */
-    color: white; /* Text color */
-    display: flex; /* Enable Flexbox layout */
-    flex-direction: column; /* Stack child elements vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
+    background: url('/Dev/images/herobg2.jpg') center/cover no-repeat; 
+    height: 90vh; 
+    color: white; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center; 
 }
 
 /* Overlay to add semi-transparency */
@@ -105,7 +104,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 /* Style for the hero content */
@@ -116,89 +115,86 @@ body {
 
 .hero-content h1 {
     font-family: 'Dancing Script', cursive;
-
-
-    font-size: 3.5rem; /* Adjust the font size as needed */
+    font-size: 3.5rem; 
     margin: 0;
 }
 
 .hero-content p {
-    font-size: 1.3rem; /* Adjust the font size as needed */
+    font-size: 1.3rem; 
     margin-top: 10px;
     color: #ff5733;
 }
 
 /* Updated CSS for Introductory Tile */
 .intro-tile {
-    background-color: #000000; /* Black background */
-    color: #FFF; /* White text color */
-    padding: 80px 0; /* Increased padding for more height */
-    text-align: center; /* Center-align text */
+    background-color: #000000; 
+    color: #FFF; 
+    padding: 80px 0; 
+    text-align: center;
     
 }
 
 .intro-tile h2 {
     color: #ff5733;
-    font-size: 24px; /* Increased font size for the title */
+    font-size: 24px; 
     margin-bottom: 20px;
     margin-top: 5%;
 }
 
 .intro-tile p {
     font-size: 16px;
-    line-height: 2; /* Increased line height for better readability */
+    line-height: 2; 
 }
 
 
-/* Connect Section */
-
+/*--------------------------- Connect Section -------------------------------------*/
 
 .connect {
-    background-color: #000; /* Black background */
-    padding: 60px 0; /* Adjust height and spacing as needed */
+    background-color: #000; 
+    padding: 60px 0; 
     text-align: center;
 }
 
 .connect h2 {
     font-size: 26px;
-    color: #fff; /* White text color */
+    color: #fff;
     margin-bottom: 50px;
     margin-top: 1%;
 }
 
 .connect i {
-    font-size: 36px; /* Adjust icon size as needed */
-    color: #ff5733; /* Icon color */
+    font-size: 36px; 
+    color: #ff5733; 
 }
 
 .connect i:hover {
-    color: #fff; /* Change icon color on hover */
+    color: #fff; 
 }
 
 .connect .col-4 {
-    margin: 0; /* Remove the default margin */
-    padding: 0 2px; /* Add padding to create space between icons */
+    margin: 0; 
+    padding: 0 2px; 
     padding-left: 1%;
     padding-right: 1%;
 }
 
 
 footer {
-    background-color: #000; /* Black background */
-    color: #ff5733; /* Text color: ff5733 (orange) */
+    background-color: #000; 
+    color: #ff5733; 
     padding: 20px 0;
     text-align: center;
     margin-bottom: 0%;
 }
 
 footer a {
-    color: #ff5733; /* Link color: ff5733 (orange) */
+    color: #ff5733; 
     text-decoration: none;
     margin: 0 10px;
 }
 
 footer a:hover {
-    color: #fff; /* Change link color on hover to white */
+    color: #fff; 
 }
 
 /* Center-align the text */
@@ -225,28 +221,38 @@ footer a:hover {
 }
 
 .custom-table left {
-    width: 40%; /* Set your desired width here */
-    border: none; /* Remove table borders */
+    width: 40%; 
+    border: none; 
     margin-top: 5%;
     padding-right: 20px; 
+}
+
+.custom-table left a {
+    text-decoration: none;
+    color:aliceblue ;
 }
 
 .custom-table .right {
     flex: 1; 
 }
 
+.custom-table .right a {
+    text-decoration: none;
+    color:aliceblue ;
+}
+
 .custom-table th, .custom-table td {
     /* margin-top: 5%; */
-    border: none; /* Remove cell borders */
+    border: none; 
     color: #eee9e9;
 }
 
 /* Style for images within the table */
 .custom-table img {
-    width: 60px; /* Set your desired width for the images */
-    height: 60px; /* Set your desired height for the images */
-    object-fit: cover; /* Ensure images maintain their aspect ratio */
-    border-radius: 50%; /* Make the images circular */
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover; 
+    border-radius: 50%; 
 }
 
 .custom-table tr {
@@ -259,85 +265,97 @@ footer a:hover {
 /* Style for the h3 tag */
 .custom-table h3 {
     font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Regular weight */
-    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: 400; 
+    font-size: 24px; 
     overflow: hidden;
 }
 
-/* Additional styling for the description text */
 .custom-table p {
-    margin: 0; /* Remove any margin to avoid extra spacing */
+    margin: 0; 
 }
 
 /* Style for the table rows with a white background */
 .custom-table-row {
-    background-color: rgba(40,40,40); /* Adjust the opacity as needed */
+    background-color: rgba(40,40,40); 
     border-radius: 10px;  
     border-left: 4px solid #ff5733;
     margin-bottom: 15px;
     padding: 15px; 
 }
 
-/* ////////////////////////Work expereince ////////////////////////// */
+/* ----------------------Work expereince-------------- --------------- */
 
 /* Add a custom style for the vertical line */
 .custom-vertical-line {
-    width: 2px; /* Adjust the line thickness as needed */
-    height: 150px; /* Adjust the line height as needed */
-    background-color: #ff5733; /* Line color */
-    margin: 0 auto; /* Center the line horizontally */
-
+    width: 2px; 
+    height: 150px; 
+    background-color: #ff5733;
+    margin: 0 auto; 
 }
 
 /* Style for the "Projects" section */
 #projects {
-    text-align: center; /* Center-align the section content */
+    text-align: center; 
 }
 
 #projects h2 {
-    font-size: 24px; /* Adjust the font size for the section header */
-    color: #ff5733; /* Text color */
-    margin-top: 30px; /* Add spacing between the line and header */
+    font-size: 24px; 
+    color: #ff5733; 
+    margin-top: 30px; 
 }
 
 /* Style for individual project details */
 .project-details {
-    margin-top: 30px; /* Add spacing between project details */
+    margin-top: 30px;
 }
 
 .project-details h4 {
-    font-size: 18px; /* Adjust the font size for project headers */
-    color: #000; /* Text color for project headers */
+    font-size: 18px; 
+    color: #000; 
 }
 
 .project-details p {
-    font-size: 16px; /* Adjust the font size for project descriptions */
-    color: #555; /* Text color for project descriptions */
+    font-size: 16px; 
+    color: #555; 
 }
 
 .align-down {
-    vertical-align: bottom; /* Align content to the bottom of the cell */
+    vertical-align: bottom; 
 }
-
-/* ... Other styles from your existing CSS ... */
 
 .bg {
     border-left:3px solid #ff5733;
 }
 
-/* ---------------------GIT REPO STyling __________________________ */
+/* --------------------------------------GIT REPO STyling --------------------------------- */
 
-.repo-container {
+
+
+
+#git-repo a {
+    text-decoration: none;
+    color:aliceblue ;
+
+}
+
+  .repo-container {
     display: flex;
+    flex-wrap: wrap; /* Allow content to wrap to the next line */
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-    background-color: rgba(40,40,40); /* Adjust the opacity as needed */
-    border-radius: 10px;  
+    background-color: rgba(40, 40, 40);
+    border-radius: 10px;
     border-left: 4px solid #ff5733;
     margin-bottom: 15px;
-    padding: 15px; 
-  }
+    padding: 15px;
+    transition: none;
+}
+
+
+.repo-container a:hover {
+    color: #ff5733; /* Change text color on hover to your desired color */
+}
   
   #git-repo h1 {
     font-family: 'Open Sans', sans-serif;
@@ -346,11 +364,12 @@ footer a:hover {
     color: #ff5733;
     margin-top: 7%;
   }
+
   .repo-container img{
-    width: 60px; /* Set your desired width for the images */
-    height: 60px; /* Set your desired height for the images */
-    object-fit: cover; /* Ensure images maintain their aspect ratio */
-    border-radius: 50%; /* Make the images circular */
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover; 
+    border-radius: 50%; /* Makes images circular */
     margin-right: 4%;
   }
 
@@ -358,15 +377,17 @@ footer a:hover {
     flex: 1;
   }
 
-  .repo-details h3 {
+   .repo-details h3 {
+    color: aliceblue;
     margin: 0;
     font-family: 'Lato', sans-serif;
-    font-weight: 400; /* Regular weight */
-    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: 400; 
+    font-size: 24px; 
     overflow: hidden;
   }
 
-  .repo-details p {
+  .repo-details  p {
+    color: aliceblue;
     margin: 5px 0;
   }
 
@@ -375,42 +396,79 @@ footer a:hover {
   }
 
   .repo-link {
-    text-decoration: none; /* Remove underlines */
-    cursor: pointer; /* Show a hand cursor on hover */
+    text-decoration: none; 
+    cursor: pointer; 
   }
 
- 
+  /* -----------------------------Contact------------------------------------ */
+
+  #contact h2 {
+    margin-top: 10%;
+    color: #ff5733;
+  }
+
+  #contactinfo h4 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #ff5733;
+  }
+
+  #icon{
+    margin-right: 3%;
+  }
+
+  .btn-custom {
+    background-color: #ff5733;
+    border-color: #ff5733;
+    color: #fff; /* Text color */
+}
+
+
+ /*-------------------------------Responsive------------------------------------- */
 
 @media (max-width: 768px) {
 
     .active {
-        color: #ff5733; /* Change to your desired active link color */
+        color: #ff5733; /*active link color */
     }
 
     .hero {
-        height: 50vh; /* Adjust the height as needed for smaller screens */
+        height: 50vh; /* height for smaller screens */
     }
 
     .hero-content h1 {
-        font-size: 2rem; /* Adjust the font size as needed for smaller screens */
+        font-size: 2rem; /* font size for smaller screens */
     }
 
     .hero-content p {
-        font-size: 1.1rem; /* Adjust the font size as needed for smaller screens */
+        font-size: 1.1rem; /* font size for smaller screens */
     }
 
     .matrix {
-        grid-template-columns: 1fr; /* Adjust for single-column layout on smaller screens */
+        grid-template-columns: 1fr; /* single-column layout on smaller screens */
       }
 
-      /* Remove some margin and padding for small screens */
+    .col-3{
+        margin-top: 4%;  /*margin for icons */
+    }
+
+    #icon{
+        margin-right: 1%;
+      }
+
+    #contact h2 {
+        margin-top: 15%;
+        color: #ff5733;
+    }
+
+    /* Remove some margin and padding for small screens */
     #table {
         margin-top: 12%;
         margin-bottom: 1%;
     }
 
     .custom-table h3 {
-        font-size: 18px; /* Adjust font size for smaller screens */
+        font-size: 18px; /* font size for smaller screens */
     }
 
     #table h1 {
@@ -418,6 +476,42 @@ footer a:hover {
         font-size: xx-large;
         font-weight: 200; 
         margin-bottom: 4%;
+        margin-top: 20%;
         color: #ff5733;
     }
+
+
+    .repo-details h3 {
+        color: aliceblue;
+        margin: 0;
+        font-family: 'Lato', sans-serif;
+        font-weight: 400; 
+        font-size: 20px; 
+        overflow: hidden;
+      }
+
+      .repo-container {
+        flex-direction: column; /* Stack child elements vertically on smaller screens */
+        align-items: flex-start; 
+        padding: 15px; 
+        border-left: none; /* Remove left border */
+        margin-bottom: 20px; 
+    }
+
+    .repo-details {
+        flex: 1;
+        width: 100%; /* Take the full width */
+    }
+
+    .repo-logo {
+        margin-right: 0; /* Remove margin on smaller screens */
+    }
+
+
+    .repo-container img {
+        width: 80px; /* Adjust image size for smaller screens */
+        height: 80px;
+        margin-right: 0; /* Remove margin on smaller screens */
+    }
+    
 }

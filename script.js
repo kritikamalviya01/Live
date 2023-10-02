@@ -7,6 +7,10 @@ $(document).ready(function() {
         }
     });
 
+    $('html, body').animate({ scrollTop: 0 }, 'slow'); 
+
+  
+
     $('.custom-toggler').click(function() {
         if ($(window).width() <= 768) {
             $('.navbar').toggleClass('bg-black');
@@ -14,7 +18,7 @@ $(document).ready(function() {
     });
 
     var typed = new Typed("#typed-text", {
-        strings: ["","Web Developer", "Designer", "Creative Thinker"],
+        strings: ["","Web Developer", "Backend Developer","Cloud Computing","DevOps", "Java Programming", "Creative Thinker", "Innovation", "Software Developer"],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
@@ -49,4 +53,31 @@ $(document).ready(function() {
             }
         }
     }
+
+
+    emailjs.init("qg1Ju54CivCqTnPwu"); // Replace with your EmailJS user ID
+
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        const data = {
+            from_name: name,
+            message: message,
+            reply_to: email,
+        };
+
+        emailjs.send("service_grfuwbb", "template_y88xz31", data)
+            .then(function(response) {
+                document.getElementById('response').textContent = 'Email sent successfully.';
+            }, function(error) {
+                console.error('Error:', error);
+                document.getElementById('response').textContent = 'An error occurred. Please try again later.';
+            });
+    });
+
+
 });

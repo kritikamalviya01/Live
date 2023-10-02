@@ -8,61 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="/Dev/styles.css">
+    <!-- <script src="/Dev/script.js"></script> -->
+
     <title>Kritika Malviya</title>
-    <style>
-      .repo-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        background-color: rgba(40,40,40); /* Adjust the opacity as needed */
-        border-radius: 10px;  
-        border-left: 4px solid #ff5733;
-        margin-bottom: 15px;
-        padding: 15px; 
-      }
-      
-      #git-repo h1 {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 400; 
-        margin-bottom: 4%;
-        color: #ff5733;
-        margin-top: 7%;
-      }
-      .repo-container img{
-        width: 60px; /* Set your desired width for the images */
-        height: 60px; /* Set your desired height for the images */
-        object-fit: cover; /* Ensure images maintain their aspect ratio */
-        border-radius: 50%; /* Make the images circular */
-        margin-right: 4%;
-      }
-
-      .repo-details {
-        flex: 1;
-      }
-
-      .repo-details h3 {
-        margin: 0;
-        font-family: 'Lato', sans-serif;
-        font-weight: 400; /* Regular weight */
-        font-size: 24px; /* Adjust the font size as needed */
-        overflow: hidden;
-      }
-
-      .repo-details p {
-        margin: 5px 0;
-      }
-
-      .repo-logo {
-        max-width: 100px;
-      }
-    </style>
   </head>
   <body>
+   
+
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home">Your Logo</a>
+
+            <a class="navbar-brand" href="#home">
+                <img src="/Dev/images/ideogram.jpeg" alt="Your Logo" class="rounded-logo">
+            </a>
             <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon">
                     <i class="fas fa-bars"></i>
@@ -73,54 +34,126 @@
                     <li class="nav-item">
                         <a class="nav-link" id="home-link" href="/Dev/index.html">Profile</a>
                     </li>
-                    <li class "nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" id="education-link" href="/Dev/assets/education.html">Education & Certifications</a>
                     </li>
-                    <li class "nav-item">
-                        <a class="nav-link " id="experience-link" href="/Dev/assets/experience.html">Work Experience</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link active" id="gitRepo-link" href="/Dev/assets/gitRepo.html">Git Repo</a>
+                    <li class="nav-item">
+                        <a class="nav-link" id="experience-link" href="/Dev/assets/experience.html">Work Experience</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="connect-link" href="#connect">Connect</a>
+                        <a class="nav-link" id="gitrepo-link" href="/Dev/assets/gitRepo.html">Git Repo</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link active" id="connect-link" href="#connect">Connect</a>
                     </li>
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
 
-    <div class="container" id="git-repo">
-      <h1>Git Repositories</h1>
-      <div class="repo-container">
-        <img class="repo-logo" src="/Dev/images/git.png" alt="GitHub Logo">
-        <div class="repo-details">
-          <h3>SocialMediaCEO</h3>
-          <p>Web Development</p>
-        </div>
-      </div>
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-custom">Submit</button>
+                </form>
+                <p id="response"></p>
+            </div>
+            
+            <div class="col-md-6 text-center" id="contactinfo">
+                <h4>Contact Information</h4>
+                <p><i class="fas fa-map-marker-alt"></i> 400054 Mumbai, Maharashtra</p>
+                <p><i class="fas fa-phone"></i>  +91 88888888</p>
+                <p><i class="fas fa-envelope"></i>  Kritikamalviya01@gmail.com</p>
 
-      <div class="repo-container">
-        <img class="repo-logo" src="/Dev/images/git.png" alt="GitHub Logo">
-        <div class="repo-details">
-          <h3>Repository 2</h3>
-          <p>Python, Flask, SQLite</p>
+                <section class="connect">
+                    <div class="container" id="connect">
+                        <div class="row justify-content-center">
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://www.instagram.com/kritikamalviya01/" target="_blank">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://www.facebook.com/kritika.malviya.1/" target="_blank">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://twitter.com/Malviyakritika1" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://www.linkedin.com/in/kritika-malviya/" target="_blank">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="mailto:kritikamalviya01@gmail.com">
+                                    <i class="fas fa-envelope"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://github.com/kritikamalviya01/" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://stackoverflow.com/users/21192975/kritika-malviya" target="_blank">
+                                    <i class="fab fa-stack-overflow"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 col-md-1 text-center" id="icon">
+                                <a href="https://www.youtube.com/" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
-      </div>
-      <!-- Add more repositories as needed -->
     </div>
-
+    
+    
     <hr class="custom-horizontal-line">
+  
 
     <footer>
+        <!-- Quick Links -->
         <a href="/Dev/index.html">Profile</a>
         <a href="/Dev/assets/education.html">Education & Certifications</a>
         <a href="/Dev/assets/experience.html">Work Experience</a>
         <a href="/Dev/assets/gitRepo.html">Git Repositories</a>
-        <a href="#connect">Connect</a>
+        <a href="#">Contact</a>
+
+        <!-- Privacy Policy Link -->
+        <!-- <a href="#">Privacy Policy</a> -->
+
+        <!-- Copyright Text -->
         <p class="footer-text">&copy; 2023 Kritika Malviya. All Rights Reserved.</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="/Dev/script.js"></script>
   </body>
 </html>
