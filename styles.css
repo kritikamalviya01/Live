@@ -400,6 +400,29 @@ footer a:hover {
     cursor: pointer; 
   }
 
+  /* -----------------------------Contact------------------------------------ */
+
+  #contact h2 {
+    margin-top: 10%;
+    color: #ff5733;
+  }
+
+  #contactinfo h4 {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #ff5733;
+  }
+
+  #icon{
+    margin-right: 3%;
+  }
+
+  .btn-custom {
+    background-color: #ff5733;
+    border-color: #ff5733;
+    color: #fff; /* Text color */
+}
+
  /*-------------------------------Responsive------------------------------------- */
 
 @media (max-width: 768px) {
@@ -426,6 +449,15 @@ footer a:hover {
 
     .col-3{
         margin-top: 4%;  /*margin for icons */
+    }
+
+    #icon{
+        margin-right: 1%;
+      }
+
+    #contact h2 {
+        margin-top: 15%;
+        color: #ff5733;
     }
 
     /* Remove some margin and padding for small screens */

@@ -1,4 +1,10 @@
 $(document).ready(function() {
+
+    // window.onbeforeunload = function () {
+    //     window.scrollTo(0, 0);
+    // };
+
+
     $(window).scroll(function() {
         if ($(document).scrollTop() > 50) {
             $('.navbar').addClass('scrolled');
@@ -6,6 +12,7 @@ $(document).ready(function() {
             $('.navbar').removeClass('scrolled');
         }
     });
+
 
     $('.custom-toggler').click(function() {
         if ($(window).width() <= 768) {
