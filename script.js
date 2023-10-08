@@ -18,7 +18,7 @@ $(document).ready(function() {
     });
 
     var typed = new Typed("#typed-text", {
-        strings: ["","Web Developer", "Backend Developer","Cloud Computing","DevOps", "Java Programming", "Creative Thinker", "Innovation", "Software Developer"],
+        strings: ["","Learner","Web Developer", "Backend Developer","Cloud Computing","DevOps", "Java Programming", "Creative Thinker", "Innovation","Content Creater", "Software Developer"],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
