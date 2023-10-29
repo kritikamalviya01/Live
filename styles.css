@@ -55,15 +55,22 @@ body {
     color: #ff5733;
 }
 
+.nav-item.active a,
+.nav-item a:active,
+.nav-item a:focus {
+    color: #ff5733;
+}
+
 /* Transparent background when scrolled */
 .navbar.scrolled {
     background: rgba(0, 0, 0, 0.7); 
 }
 
 /* Change link color when scrolled */
-.navbar.scrolled .navbar-nav .nav-link {
-    color: #fff; 
-}
+/* .navbar.scrolled .navbar-nav .nav-link { */
+    /* color: #fff;  */
+    /* color: #ff5733;  */
+/* } */
 
 .navbar-nav .nav-link:hover {
     color: #ff5733; 

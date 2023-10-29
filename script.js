@@ -5,6 +5,7 @@ $(document).ready(function() {
         } else {
             $('.navbar').removeClass('scrolled');
         }
+
     });
 
     $('html, body').animate({ scrollTop: 0 }, 'slow'); 
@@ -37,23 +38,21 @@ $(document).ready(function() {
         }
     });
 
-    // Get the current URL
+ 
     const currentUrl = window.location.href;
 
-    const links = {
-        connect: document.getElementById("connect-link")
-        // Add IDs for other links
-    };
+    // Remove the "active" class from all links
+    $('a.nav-link').removeClass('active');
 
-
-    for (const key in links) {
-        if (links.hasOwnProperty(key)) {
-            if (currentUrl.includes(links[key].href)) {
-                links[key].classList.add("active");
-            }
+    // Iterate through the links and add "active" class to the appropriate one
+    $('a.nav-link').each(function () {
+        const href = $(this).attr('href');
+        if (currentUrl.includes(href)) {
+            $(this).addClass('active');
         }
-    }
+    });
 
+        
 
     emailjs.init("qg1Ju54CivCqTnPwu"); // Replace with your EmailJS user ID
 
