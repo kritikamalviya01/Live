@@ -95,7 +95,7 @@ body {
 .hero {
     position: relative;
     text-align: center;
-    background: url('/Dev/images/herobg2.jpg') center/cover no-repeat; 
+    background: url('./images/herobg2.jpg') center/cover no-repeat; 
     height: 90vh; 
     color: white; 
     display: flex; 
