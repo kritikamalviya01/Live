@@ -19,7 +19,7 @@ $(document).ready(function() {
     });
 
     var typed = new Typed("#typed-text", {
-        strings: ["","Learner","Web Developer", "Backend Developer","Cloud Computing","DevOps", "Java Programming", "Creative Thinker", "Innovation","Content Creater", "Software Developer"],
+        strings: ["","Learner","Web Developer", "Backend Developer","Cloud Computing","DevOps", "Java Programming", "Creative Thinker", "Innovation","Content Creator", "Software Developer"],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
@@ -52,9 +52,12 @@ $(document).ready(function() {
         }
     });
 
-        
+    updateExperienceYears();
+    // Update the experience years every 1 minute (adjust the interval as needed)
+    setInterval(updateExperienceYears, 60000); // 1 minute = 60,000 milliseconds
 
-    emailjs.init("qg1Ju54CivCqTnPwu"); // Replace with your EmailJS user ID
+    // Email JS Function
+    emailjs.init("qg1Ju54CivCqTnPwu"); 
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -80,3 +83,35 @@ $(document).ready(function() {
 
 
 });
+
+
+function calculateExperienceDuration(startDate, endDate) {
+    const years = endDate.diff(startDate, 'year');
+    startDate = startDate.add(years, 'year');
+    const months = endDate.diff(startDate, 'month');
+    
+    if (years > 0 && months > 0) {
+        return `${years} year${years > 1 ? 's' : ''} and ${months} month${months > 1 ? 's' : ''}`;
+    } else if (years > 0) {
+        return `${years} year${years > 1 ? 's' : ''}`;
+    } else if (months > 0) {
+        return `${months} month${months > 1 ? 's' : ''}`;
+    } else {
+        return 'Less than a month';
+    }
+}
+
+// Function to update experience years
+function updateExperienceYears() {
+    $('.experience-item').each(function () {
+        const startDateStr = $(this).data('start-date');
+        const startDate = dayjs(startDateStr);
+        const currentDate = dayjs();
+        const duration = calculateExperienceDuration(startDate, currentDate);
+        const durationElement = $(this).find('.experience-duration');
+        durationElement.text(` (${duration})`);
+    });
+}
+
+// Update the experience years every month
+setInterval(updateExperienceYears, 2628); // 1 month = 2,628,000,000 milliseconds 2628000000
