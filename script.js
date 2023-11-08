@@ -114,4 +114,4 @@ function updateExperienceYears() {
 }
 
 // Update the experience years every month
-setInterval(updateExperienceYears, 2628); // 1 month = 2,628,000,000 milliseconds 2628000000
+setInterval(updateExperienceYears, 2628000000); // 1 month = 2,628,000,000 milliseconds 2628000000
