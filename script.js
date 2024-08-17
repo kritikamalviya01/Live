@@ -54,7 +54,7 @@ $(document).ready(function() {
 
     updateExperienceYears();
     // Update the experience years every 1 minute (adjust the interval as needed)
-    setInterval(updateExperienceYears, 60000); // 1 minute = 60,000 milliseconds
+    setInterval(updateExperienceYears, 2628000000); //  1 month = 2,628,000,000 milliseconds 2628000000
 
     // Email JS Function
     emailjs.init("qg1Ju54CivCqTnPwu"); 
