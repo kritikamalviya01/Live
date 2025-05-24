@@ -1,327 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <meta name="description" content="Kritika Malviya is a Web Developer and Java Programmer with a passion for content creation and innovation. Explore her portfolio and connect with her." />
-    <meta name="copyright" content="Kritika Malviya" />
-	<meta name="keywords"
-		content="kritika,Malviya,Kritika Malviya,tcs,TCS,Tcs,kritika malviya,Kritika,malviya,java,jdbc,spring java,Entrepreneur,springboot,Microservices,Content creator,Java programming,Docker,maven" />
-	<meta name="DC.title" content="Kritika Malviya" />
-    <meta name="title" content="Kritika Malviya" />
-	<meta name="robots" content="index,follow">
-	<meta name="author" content="Kritika Malviya" />
-	<meta property="og:type" content="website">
-	<meta property="og:url" content="https://kritikamalviya01.github.io/Live/">
-	<meta property="og:title" content="Kritika Malviya">
-    <meta property="og:description"
-    content="Explore Kritika Malviya's passion, education, work experiences, skills, and more on her official website. Discover code samples and achievements in tech.">
-    <meta property="og:image" content="images/kLogo.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://kritikamalviya01.github.io/Live/">
-    <meta property="twitter:title" content="Kritika Malviya">
-    <meta property="twitter:description"
-        content="Kritika Malviya is a Web Developer and Java Programmer with a passion for content creation and innovation. Explore her portfolio and connect with her.">
-    <meta property="twitter:image" content="images/kLogo.png">
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta content="Kritika Malviya is a Web Developer and Java Programmer with a passion for content creation and innovation. Explore her portfolio and connect with her."
+          name="description"/>
+    <meta content="Kritika Malviya" name="copyright"/>
+    <meta content="kritika,Malviya,Kritika Malviya,tcs,TCS,Tcs,Hootpro,kritika malviya,Kritika,malviya,java,jdbc,spring java,Entrepreneur,springboot,Microservices,Content creator,Java programming,Docker,maven"
+          name="keywords"/>
+    <meta content="Kritika Malviya" name="DC.title"/>
+    <meta content="Kritika Malviya" name="title"/>
+    <meta content="index,follow" name="robots">
+    <meta content="Kritika Malviya" name="author"/>
+    <meta content="website" property="og:type">
+    <meta content="https://kritikamalviya01.github.io/Live/" property="og:url">
+    <meta content="Kritika Malviya" property="og:title">
+    <meta content="Explore Kritika Malviya's passion, education, work experiences, skills, and more on her official website. Discover code samples and achievements in tech."
+          property="og:description">
+    <meta content="images/kLogo.png" property="og:image">
+    <meta content="summary_large_image" property="twitter:card">
+    <meta content="https://kritikamalviya01.github.io/Live/" property="twitter:url">
+    <meta content="Kritika's Git Repositories | HootPro" name="twitter:title"/>
+    <meta content="Kritika Malviya is a Web Developer and Java Programmer with a passion for content creation and innovation. Explore her portfolio and connect with her."
+          property="twitter:description">
+    <meta content="images/kLogo.png" property="twitter:image">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
+    <link href="../styles.css" rel="stylesheet">
 
-    <link rel="icon" type="image/x-icon" href="../images/kLogo.png">
-    
+    <link href="../images/kLogo.png" rel="icon" type="image/x-icon">
+
     <title>Kritika Malviya</title>
 
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-          <a class="navbar-brand" href="#home">
-            <img src="../images/kLogo.png" alt="Your Logo">
-          </a>
-          <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <script>
+        window.onload = () => {
+          let currentIndex = 0;
+          const batchSize = 20;
+          let allRepos = [];
+
+          const repoList = document.getElementById("repo-list");
+          const loadMoreBtn = document.getElementById("load-more-btn");
+
+          async function fetchRepos() {
+            try {
+              const username = "kritikamalviya01";
+              const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
+              allRepos = await response.json();
+
+              if (!Array.isArray(allRepos)) {
+                console.error("GitHub API Error:", allRepos);
+                return;
+              }
+
+              renderRepos(); // Load first batch
+              if (allRepos.length > batchSize) {
+                loadMoreBtn.style.display = "inline-block";
+              }
+            } catch (error) {
+              console.error("Error fetching repos:", error);
+            }
+          }
+
+          async function fetchLanguages(repo) {
+            const res = await fetch(repo.languages_url);
+            const data = await res.json();
+            return Object.keys(data).join(", ") || "No Languages";
+          }
+
+          async function renderRepos() {
+            const nextBatch = allRepos.slice(currentIndex, currentIndex + batchSize);
+
+            for (const repo of nextBatch) {
+              const languages = await fetchLanguages(repo);
+
+              const tr = document.createElement("tr");
+              tr.className = "custom-table-row";
+
+              const descriptionHTML = repo.description
+                ? `<p class="text-break">${repo.description}</p>`
+                : "";
+
+              tr.innerHTML = `
+                <td class="align-middle left">
+                  <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                    <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
+                  </a>
+                </td>
+                <td class="align-middle right">
+                  <a class="repo-link" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                    <div class="repo-details">
+                      <h3 class="text-break">${repo.name}</h3>
+                      <p class="text-break">${languages}</p>
+                      ${descriptionHTML}
+                    </div>
+                  </a>
+                </td>
+              `;
+
+              repoList.appendChild(tr);
+            }
+
+            currentIndex += batchSize;
+
+            if (currentIndex >= allRepos.length) {
+              loadMoreBtn.style.display = "none";
+            }
+          }
+
+          loadMoreBtn.addEventListener("click", renderRepos);
+          fetchRepos();
+        };
+    </script>
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#home">
+            <img alt="Your Logo" src="../images/kLogo.png">
+        </a>
+        <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler custom-toggler"
+                data-target="#navbarNav" data-toggle="collapse" type="button">
               <span class="navbar-toggler-icon">
                   <i class="fas fa-bars"></i>
               </span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
-                      <a class="nav-link" id="home-link" href="../index.html">Profile</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" id="education-link" href="./education.html">Education & Certifications</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" id="experience-link" href="./experience.html">Work Experience</a>
-                  </li>
-                  <li class="nav-item active">
-                      <a class="nav-link active" id="gitRepo-link" href="./gitRepo.html">Git Repositories</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" id="connect-link" href="./connect.html">Connect</a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
-
-    <div class="container" id="table" id="git-repo">
-      <h1>Git Repositories</h1>
-      <div class="table-responsive">
-          <table class="table custom-table">
-              <tbody>
-                  <!-- Repository 1 -->
-                  <tr class="custom-table-row">
-                      <td class="align-middle left">
-                          <a class="repo-link" href="https://github.com/kritikamalviya01/SocialMediaCEO" target="_blank">
-                              <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                          </a>
-                      </td>
-                      <td class="align-middle right">
-                          <a class="repo-link" href="https://github.com/kritikamalviya01/SocialMediaCEO" target="_blank">
-                              <div class="repo-details">
-                                  <h3 class="text-break">SocialMediaCEO</h3>
-                                  <p class="text-break">HTML, CSS, Javascript</p>
-                              </div>
-                          </a>
-                      </td>
-                  </tr>
-  
-                  <!-- Repository 2 -->
-                  <tr class="custom-table-row">
-                      <td class="align-middle left">
-                          <a class="repo-link" href="https://github.com/kritikamalviya01/SocialMediaCEOTest" target="_blank">
-                              <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                          </a>
-                      </td>
-                      <td class="align-middle right">
-                          <a class="repo-link" href="https://github.com/kritikamalviya01/SocialMediaCEOTest" target="_blank">
-                              <div class="repo-details">
-                                  <h3 class="text-break">SocialMediaCEOTest</h3>
-                                  <p class="text-break">HTML, CSS, Javascript</p>
-                              </div>
-                          </a>
-                      </td>
-                  </tr>
-  
-                  <!-- Repository 3 -->
-                  <tr class="custom-table-row">
-                      <td class="align-middle left">
-                          <a class="repo-link" href="https://github.com/kritikamalviya01/JavaMockito_BDDStyle" target="_blank">
-                              <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                          </a>
-                      </td>
-                      <td class="align-middle right">
-                          <a class="repo-link" href="https://github.com/kritikamalviya01/JavaMockito_BDDStyle" target="_blank">
-                              <div class="repo-details">
-                                  <h3 class="text-break">JavaMockito_BDDStyle</h3>
-                                  <p class="text-break">Java</p>
-                              </div>
-                          </a>
-                      </td>
-                  </tr>
-  
-                  <!-- Repository 4 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/JavaMockito_ArgumentMatchers" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/JavaMockito_ArgumentMatchers" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">JavaMockito_ArgumentMatchers</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 5 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Java_Tutorial" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Java_Tutorial" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">Java_Tutorial</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 6 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/JavaMockito" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/JavaMockito" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">JavaMockito</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 7 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Microservice_Contact_User_Project" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Microservice_Contact_User_Project" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">Microservice_Contact_User_Project</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 8 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/RestAPIDemoDatabase" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/RestAPIDemoDatabase" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">RestAPIDemoDatabase</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 9 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/RestAPIDemo" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/RestAPIDemo" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">RestAPIDemo</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html" id="home-link">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./education.html" id="education-link">Education & Certifications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./experience.html" id="experience-link">Work Experience</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link active" href="./gitRepo.html" id="gitRepo-link">Git Repositories</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./connect.html" id="connect-link">Connect</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 
-                  <!-- Repository 10 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/LetsUpgrade-" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/LetsUpgrade-" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">LetsUpgrade-</h3>
-                                <p class="text-break">Jupyter Notebook</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
+<div class="container" id="table" id="git-repo">
+    <h1>Git Repositories</h1>
+    <div class="table-responsive">
+        <table class="table custom-table" id="repo-table">
+            <tbody id="repo-list"></tbody>
+        </table>
 
-                  <!-- Repository 11 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/git_test" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/git_test" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">git_test</h3>
-                                <p class="text-break">Jupyter Notebook</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
+        <!-- Load More Button -->
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="load-more-btn"
+                    style="background-color: #ff5733; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold;">
+                Load More
+            </button>
+        </div>
 
-                  <!-- Repository 12 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Websites" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Websites" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">Websites</h3>
-                                <p class="text-break">HTML</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 13 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/JavaTDD" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/JavaTDD" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">JavaTDD</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Repository 14 -->
-                  <tr class="custom-table-row">
-                    <td class="align-middle left">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Coursera-Java-for-Android" target="_blank">
-                            <img class="repo-logo" src="../images/git.png" alt="GitHub Logo">
-                        </a>
-                    </td>
-                    <td class="align-middle right">
-                        <a class="repo-link" href="https://github.com/kritikamalviya01/Coursera-Java-for-Android" target="_blank">
-                            <div class="repo-details">
-                                <h3 class="text-break">Coursera-Java-for-Android</h3>
-                                <p class="text-break">Java</p>
-                            </div>
-                        </a>
-                    </td>
-                  </tr>
-
-                  <!-- Add more repositories as needed -->
-              </tbody>
-          </table>
-      </div>
-  </div>
+    </div>
+</div>
 
 
-  <footer>
+<footer>
     <!-- Quick Links -->
     <a href="../index.html">Profile</a>
     <a href="./education.html">Education & Certifications</a>
@@ -335,13 +187,13 @@
     <!-- Copyright Text -->
     <p class="footer-text">&copy; 2023 Kritika Malviya. All Rights Reserved.</p>
 </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-   
-    <script src="../script.js"></script>
 
-  </body>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="../script.js"></script>
+
+</body>
 </html>
