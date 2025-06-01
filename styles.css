@@ -114,10 +114,39 @@ body {
     background: rgba(0, 0, 0, 0.5); 
 }
 
-/* Style for the hero content */
+.hero-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 60px 20px;
+}
+
 .hero-content {
-    text-align: center;
+    flex: 1;
+    text-align: left;
+    color: #fff;
+}
+
+/* Style for the hero content */
+/*.hero-content {
+    text-align: right;
     z-index: 1; /* Place the content above the overlay */
+/*}*/
+
+.hero-image {
+    flex: 0 0 200px;
+    margin-left: 40px;
+}
+
+.hero-image img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff5733;
+    box-shadow: 0 0 10px rgba(255, 87, 51, 0.5);
 }
 
 .hero-content h1 {

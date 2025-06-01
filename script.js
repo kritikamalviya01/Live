@@ -19,7 +19,7 @@ $(document).ready(function() {
     });
 
     var typed = new Typed("#typed-text", {
-        strings: ["","Learner","Web Developer", "Backend Developer","Cloud Computing","DevOps", "Java Programming", "Creative Thinker", "Innovation","Content Creator", "Software Developer"],
+        strings: ["","Learner","Web Developer","Digital Strategist","Backend Developer","Cloud Computing","DevOps","Java Programming","Founder","Creative Thinker", "Innovation","Content Creator", "Software Developer"],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true,
@@ -57,7 +57,7 @@ $(document).ready(function() {
     setInterval(updateExperienceYears, 2628000000); //  1 month = 2,628,000,000 milliseconds 2628000000
 
     // Email JS Function
-    emailjs.init("qg1Ju54CivCqTnPwu"); 
+    emailjs.init("b-wCYemCbHnG6v4Yv");
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -72,7 +72,7 @@ $(document).ready(function() {
             reply_to: email,
         };
 
-        emailjs.send("service_grfuwbb", "template_y88xz31", data)
+        emailjs.send("service_woa4biw", "template_y88xz31", data)
             .then(function(response) {
                 document.getElementById('response').textContent = 'Email sent successfully.';
             }, function(error) {
