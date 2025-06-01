@@ -479,6 +479,22 @@ footer a:hover {
     .hero-content p {
         font-size: 1.1rem; /* font size for smaller screens */
     }
+    .hero-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .hero-image {
+        margin-left: 0;
+      }
+
+
+
 
     .matrix {
         grid-template-columns: 1fr; /* single-column layout on smaller screens */
