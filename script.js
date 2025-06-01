@@ -55,32 +55,34 @@ $(document).ready(function() {
     setInterval(updateExperienceYears, 2628000000); //  1 month = 2,628,000,000 milliseconds 2628000000
 
     // Email JS Function
-    emailjs.init("b-wCYemCbHnG6v4Yv");
+     emailjs.init("b-wCYemCbHnG6v4Yv");
 
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-        e.preventDefault();
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
 
-        // Read exactly from #user_name and #user_email
-        const name    = document.getElementById('user_name').value;
-        const email   = document.getElementById('user_email').value;
-        const message = document.getElementById('message').value;
+                const name    = document.getElementById('user_name').value;
+                const email   = document.getElementById('user_email').value;
+                const message = document.getElementById('message').value;
 
-        // Build data object with matching keys
-        const data = {
-            user_name:  name,
-            user_email: email,
-            message:    message
-        };
+                const data = {
+                    user_name:  name,
+                    user_email: email,
+                    message:    message
+                };
 
-        emailjs.send("service_woa4biw", "template_yk6akh9", data)
-            .then(function(response) {
-                document.getElementById('response').textContent = 'Email sent successfully.';
-            }, function(error) {
-                console.error('Error:', error);
-                document.getElementById('response').textContent = 'An error occurred. Please try again later.';
+                emailjs.send("service_woa4biw", "template_yk6akh9", data)
+                    .then(function(response) {
+                        document.getElementById('response').textContent = 'Email sent successfully.';
+                    }, function(error) {
+                        console.error('Error:', error);
+                        document.getElementById('response').textContent = 'An error occurred. Please try again later.';
+                    });
             });
+        }
     });
-}); // ← This closes the $(document).ready(...)
+
 
 
 // Function to calculate experience duration
