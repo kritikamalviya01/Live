@@ -57,7 +57,7 @@ $(document).ready(function() {
     setInterval(updateExperienceYears, 2628000000); //  1 month = 2,628,000,000 milliseconds 2628000000
 
     // Email JS Function
-    emailjs.init("N00I1kYaAC2QpPm6v");
+    emailjs.init("b-wCYemCbHnG6v4Yv");
 
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
