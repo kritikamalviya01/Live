@@ -5,12 +5,9 @@ $(document).ready(function() {
         } else {
             $('.navbar').removeClass('scrolled');
         }
-
     });
 
-    $('html, body').animate({ scrollTop: 0 }, 'slow'); 
-
-  
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
 
     $('.custom-toggler').click(function() {
         if ($(window).width() <= 768) {
@@ -18,12 +15,14 @@ $(document).ready(function() {
         }
     });
 
-    var typed = new Typed("#typed-text", {
-        strings: ["","Learner","Web Developer","Digital Strategist","Backend Developer","Cloud Computing","DevOps","Java Programming","Founder","Creative Thinker", "Innovation","Content Creator", "Software Developer"],
-        typeSpeed: 60,
-        backSpeed: 40,
-        loop: true,
-    });
+    if (document.getElementById('typed-text')) {
+        var typed = new Typed("#typed-text", {
+            strings: ["","Learner","Web Developer","Digital Strategist","Backend Developer","Cloud Computing","DevOps","Java Programming","Founder","Creative Thinker", "Innovation","Content Creator", "Software Developer"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+        });
+    }
 
     // Smooth scrolling for all anchor links
     $("a").on('click', function(event) {
@@ -38,7 +37,6 @@ $(document).ready(function() {
         }
     });
 
- 
     const currentUrl = window.location.href;
 
     // Remove the "active" class from all links
@@ -62,17 +60,19 @@ $(document).ready(function() {
     document.getElementById('contact-form').addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
+        // Read exactly from #user_name and #user_email
+        const name    = document.getElementById('user_name').value;
+        const email   = document.getElementById('user_email').value;
         const message = document.getElementById('message').value;
 
+        // Build data object with matching keys
         const data = {
-            from_name: name,
-            message: message,
-            reply_to: email,
+            user_name:  name,
+            user_email: email,
+            message:    message
         };
 
-        emailjs.send("service_woa4biw", "template_y88xz31", data)
+        emailjs.send("service_woa4biw", "template_yk6akh9", data)
             .then(function(response) {
                 document.getElementById('response').textContent = 'Email sent successfully.';
             }, function(error) {
@@ -80,16 +80,15 @@ $(document).ready(function() {
                 document.getElementById('response').textContent = 'An error occurred. Please try again later.';
             });
     });
+}); // ← This closes the $(document).ready(...)
 
 
-});
-
-
+// Function to calculate experience duration
 function calculateExperienceDuration(startDate, endDate) {
     const years = endDate.diff(startDate, 'year');
     startDate = startDate.add(years, 'year');
     const months = endDate.diff(startDate, 'month');
-    
+
     if (years > 0 && months > 0) {
         return `${years} year${years > 1 ? 's' : ''} and ${months} month${months > 1 ? 's' : ''}`;
     } else if (years > 0) {
@@ -115,4 +114,3 @@ function updateExperienceYears() {
 
 // Update the experience years every month
 setInterval(updateExperienceYears, 2628000000); // 1 month = 2,628,000,000 milliseconds 2628000000
-
