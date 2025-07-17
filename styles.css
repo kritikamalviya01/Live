@@ -363,6 +363,16 @@ footer a:hover {
     border-left:3px solid #ff5733;
 }
 
+#founder {
+  color: white;
+  text-decoration: none;
+}
+
+#founder:hover {
+  color: #ff5733; /* Change this to your desired hover color */
+  text-decoration: underline; /* Optional underline on hover */
+}
+
 /* --------------------------------------GIT REPO STyling --------------------------------- */
 
 
