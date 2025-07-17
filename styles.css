@@ -369,8 +369,8 @@ footer a:hover {
 }
 
 #founder:hover {
-  color: #ff5733; /* Change this to your desired hover color */
-  text-decoration: underline; /* Optional underline on hover */
+  color: #ff5733;
+  text-decoration: underline;
 }
 
 /* --------------------------------------GIT REPO STyling --------------------------------- */
