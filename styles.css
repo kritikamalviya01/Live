@@ -15,7 +15,7 @@ body {
 }
 
 .navbar a.navbar-brand img {
-    max-height: 40px; /* Adjust the logo height */
+    max-height: 80px; /* Adjust the logo height */
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -116,11 +116,11 @@ body {
 
 .hero-flex {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     align-items: center;
     position: relative;
     z-index: 1;
-    padding: 60px 20px;
 }
 
 .hero-content {
@@ -180,6 +180,50 @@ body {
 .intro-tile p {
     font-size: 16px;
     line-height: 2; 
+}
+
+/* Hero section Logo*/
+
+.hero-name-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5px; /* space between logo & name */
+}
+
+/* LEFT BLOCK (LOGO) */
+.hero-left img {
+    width: 220px;
+    height: auto;
+    Margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    object-fit: contain;
+
+}
+
+/* RIGHT BLOCK (TEXT) */
+.hero-right {
+    max-width: 520px;
+    text-align: left;
+}
+
+.hero-right h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem;
+    margin-bottom: 16px;
+}
+
+.hero-right p {
+    font-size: 1.3rem;
+    color: #ff5733;
+}
+
+.hero-left img {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.hero-left img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
 
 
@@ -492,6 +536,7 @@ footer a:hover {
     .hero-flex {
         flex-direction: column;
         text-align: center;
+        margin-top: 200px;
       }
 
       .hero-content {
@@ -502,8 +547,25 @@ footer a:hover {
       .hero-image {
         margin-left: 0;
       }
+      .hero-image img {
+              width: 140px;
+              height: 140px;
+              border-radius: 50%;
+              border: 3px solid #ff5733;
+          }
 
+    .hero-right {
+        text-align: center;
+        font-size: 2.6rem;
+        text-align: center;
+    }
+    .hero-right h1 {
 
+        }
+
+    .hero-left {
+            display: none;
+     }
 
 
     .matrix {
